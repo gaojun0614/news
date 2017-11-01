@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$.ajax({
+				url:"http://localhost:3000/item/list",
+				type:"GET",
+				success:function(e){
+					console.log(e);
+					for (i in e) {
+						$("#box").append("<a href='detail.html?id="+e[i].id+"'>"+e[i].nav+"</a><br>")
+					}
+				}
+			})
+		})
+	</script>
+	<style>
+		#nav{
+			margin-bottom: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="nav">
+		<a href="#">娱乐</a>
+		<a href="detail.html?id=INS">新闻</a>
+		<a href="#">国内</a>
+		<a href="#">国外</a>
+	</div>
+	<div id="box">
+		
+	</div>
+</body>
+</html>
